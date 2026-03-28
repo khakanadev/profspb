@@ -73,6 +73,9 @@ export function SiteHeader() {
               <li>
                 <NavLink href="#quiz">Опрос</NavLink>
               </li>
+              <li>
+                <NavLink href="#universities">Вузы</NavLink>
+              </li>
             </NavList>
           </nav>
         </Row>
