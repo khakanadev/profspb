@@ -9,6 +9,8 @@ export const GlobalStyle = createGlobalStyle`
 
   html {
     -webkit-text-size-adjust: 100%;
+    scroll-behavior: smooth;
+    scroll-padding-top: ${({ theme }) => theme.layout.scrollPaddingTop};
   }
 
   body {

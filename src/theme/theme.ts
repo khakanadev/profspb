@@ -1,11 +1,23 @@
 export type AppTheme = {
+  layout: {
+    maxWidth: string
+    pagePadding: string
+    headerHeight: string
+    scrollPaddingTop: string
+  }
   color: {
     bg: string
     surface: string
     text: string
     textMuted: string
+    /** Фирменный акцент школы — только `#0ebe7c` (в hex латинская `b`, не «б»). */
     accent: string
     accentHover: string
+    /** Полупрозрачные варианты того же #0ebe7c (rgb 14, 190, 124). */
+    accentSurface: string
+    accentSurfaceStrong: string
+    accentShadow: string
+    accentHeaderRule: string
     border: string
   }
   font: {
@@ -25,13 +37,24 @@ export type AppTheme = {
 }
 
 export const theme: AppTheme = {
+  layout: {
+    maxWidth: '1200px',
+    pagePadding: '1rem',
+    headerHeight: '4rem',
+    scrollPaddingTop: '5rem',
+  },
   color: {
-    bg: '#f8faf9',
+    /* Лёгкий зелёный подтон к #0ebe7c */
+    bg: '#f3faf7',
     surface: '#ffffff',
     text: '#1a1f1c',
     textMuted: '#5c6860',
     accent: '#0ebe7c',
-    accentHover: '#0a9c68',
+    accentHover: '#0ba570',
+    accentSurface: 'rgba(14, 190, 124, 0.14)',
+    accentSurfaceStrong: 'rgba(14, 190, 124, 0.08)',
+    accentShadow: 'rgba(14, 190, 124, 0.12)',
+    accentHeaderRule: 'rgba(14, 190, 124, 0.45)',
     border: '#dfe8e3',
   },
   font: {
