@@ -70,6 +70,9 @@ export function SiteHeader() {
               <li>
                 <NavLink href="#why-site">Зачем этот сайт</NavLink>
               </li>
+              <li>
+                <NavLink href="#quiz">Опрос</NavLink>
+              </li>
             </NavList>
           </nav>
         </Row>

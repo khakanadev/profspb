@@ -70,3 +70,9 @@ export const universities: readonly University[] = [
     vuzopediaUrl: 'https://vuzopedia.ru/vuz/1147',
   },
 ] as const
+
+export function findUniversityByShortName(
+  shortName: string,
+): University | undefined {
+  return universities.find((u) => u.shortName === shortName)
+}
