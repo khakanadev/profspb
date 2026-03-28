@@ -24,9 +24,14 @@ const Hero = styled.section`
 
 const HeroInner = styled.div`
   position: relative;
-  max-width: 38rem;
+  max-width: min(38rem, 100%);
   padding-left: ${({ theme }) => theme.space.lg};
   border-left: 3px solid ${({ theme }) => theme.color.accent};
+
+  @media (max-width: 22.5rem) {
+    padding-left: ${({ theme }) => theme.space.sm};
+    border-left-width: 2px;
+  }
 `
 
 const Kicker = styled.p`
@@ -54,6 +59,14 @@ const Kicker = styled.p`
     border-radius: 50%;
     background: ${({ theme }) => theme.color.accent};
   }
+
+  @media (max-width: 22.5rem) {
+    max-width: 100%;
+    padding: 0.3rem 0.6rem;
+    font-size: 0.6875rem;
+    letter-spacing: 0.05em;
+    gap: 0.375rem;
+  }
 `
 
 const Title = styled.h1`
@@ -64,6 +77,14 @@ const Title = styled.h1`
   line-height: 1.06;
   letter-spacing: -0.045em;
   color: ${({ theme }) => theme.color.text};
+
+  @media (max-width: 22.5rem) {
+    max-width: none;
+    margin-bottom: ${({ theme }) => theme.space.md};
+    font-size: clamp(1.7rem, 9.2vw, 2.125rem);
+    letter-spacing: -0.035em;
+    line-height: 1.1;
+  }
 `
 
 const TitleAccent = styled.span`
@@ -72,11 +93,16 @@ const TitleAccent = styled.span`
 
 const Lead = styled.p`
   margin: 0;
-  max-width: 34rem;
+  max-width: min(34rem, 100%);
   font-size: 1.0625rem;
   line-height: 1.68;
   font-weight: 400;
   color: ${({ theme }) => theme.color.textMuted};
+
+  @media (max-width: 22.5rem) {
+    font-size: 0.9375rem;
+    line-height: 1.62;
+  }
 `
 
 const LeadBrand = styled.span`

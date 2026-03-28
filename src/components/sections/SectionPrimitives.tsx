@@ -4,11 +4,15 @@ export const ContentSection = styled.section`
   scroll-margin-top: ${({ theme }) => theme.layout.scrollPaddingTop};
   padding: ${({ theme }) => theme.space.section} 0;
   border-top: 1px solid ${({ theme }) => theme.color.borderSubtle};
+
+  @media (max-width: 719px) {
+    scroll-margin-top: ${({ theme }) => theme.layout.scrollPaddingTopNarrow};
+  }
 `
 
 export const SectionIntro = styled.div`
   margin-bottom: ${({ theme }) => theme.space.xl};
-  max-width: 38rem;
+  max-width: min(38rem, 100%);
 `
 
 export const SectionTitle = styled.h2`
@@ -22,7 +26,7 @@ export const SectionTitle = styled.h2`
 
 export const SectionLead = styled.p`
   margin: ${({ theme }) => theme.space.md} 0 0;
-  max-width: 40rem;
+  max-width: min(40rem, 100%);
   font-size: 0.9375rem;
   line-height: 1.65;
   font-weight: 400;
@@ -44,6 +48,10 @@ export const PointCard = styled.li`
   border: 1px solid ${({ theme }) => theme.color.border};
   border-radius: ${({ theme }) => theme.radius.lg};
   box-shadow: ${({ theme }) => theme.color.shadowSoft};
+
+  @media (max-width: 22.5rem) {
+    padding: ${({ theme }) => theme.space.md};
+  }
 `
 
 export const PointTitle = styled.h3`
@@ -69,6 +77,10 @@ export const EmphasisBlock = styled.div`
   border-top: 1px solid ${({ theme }) => theme.color.borderSubtle};
   border-right: 1px solid ${({ theme }) => theme.color.borderSubtle};
   border-bottom: 1px solid ${({ theme }) => theme.color.borderSubtle};
+
+  @media (max-width: 22.5rem) {
+    padding: ${({ theme }) => theme.space.md};
+  }
 `
 
 export const EmphasisText = styled.p`

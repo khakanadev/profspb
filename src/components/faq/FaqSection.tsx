@@ -18,6 +18,10 @@ const FaqIntro = styled(SectionIntro)`
     );
   border-radius: 0 ${({ theme }) => theme.radius.md}
     ${({ theme }) => theme.radius.md} 0;
+
+  @media (max-width: 22.5rem) {
+    padding-left: ${({ theme }) => theme.space.sm};
+  }
 `
 
 const FaqTitle = styled(SectionTitle)`
@@ -94,7 +98,7 @@ const FaqSummary = styled.summary`
   cursor: pointer;
   align-items: center;
   justify-content: space-between;
-  gap: ${({ theme }) => theme.space.md};
+  gap: ${({ theme }) => theme.space.sm};
   padding: ${({ theme }) => theme.space.md} ${({ theme }) => theme.space.lg};
   font-size: 0.9375rem;
   font-weight: 600;
@@ -123,6 +127,13 @@ const FaqSummary = styled.summary`
   details[open] > & ${Chevron} {
     transform: rotate(180deg);
   }
+
+  @media (max-width: 22.5rem) {
+    gap: ${({ theme }) => theme.space.sm};
+    padding: ${({ theme }) => theme.space.sm} ${({ theme }) => theme.space.md};
+    font-size: 0.875rem;
+    line-height: 1.45;
+  }
 `
 
 const FaqAnswer = styled.div`
@@ -143,6 +154,13 @@ const FaqAnswer = styled.div`
   font-size: 0.875rem;
   line-height: 1.65;
   color: ${({ theme }) => theme.color.textMuted};
+
+  @media (max-width: 22.5rem) {
+    padding: ${({ theme }) => theme.space.md} ${({ theme }) => theme.space.md}
+      ${({ theme }) => theme.space.md};
+    font-size: 0.8125rem;
+    line-height: 1.62;
+  }
 `
 
 export function FaqSection() {

@@ -13,7 +13,14 @@ const CardGrid = styled.ul`
   padding: 0;
   list-style: none;
   gap: ${({ theme }) => theme.space.lg};
-  grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr));
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(min(100%, 260px), 1fr)
+  );
+
+  @media (max-width: 22.5rem) {
+    gap: ${({ theme }) => theme.space.md};
+  }
 `
 
 const Card = styled.li`
@@ -63,6 +70,10 @@ const CardBody = styled.div`
   flex-direction: column;
   gap: ${({ theme }) => theme.space.sm};
   padding: ${({ theme }) => theme.space.lg};
+
+  @media (max-width: 22.5rem) {
+    padding: ${({ theme }) => theme.space.md};
+  }
 `
 
 const CardTitle = styled.h3`

@@ -4,7 +4,8 @@ import { SiteShell } from './SiteShell'
 
 const FooterBar = styled.footer`
   margin-top: ${({ theme }) => theme.space.section};
-  padding: ${({ theme }) => theme.space.xl} 0;
+  padding: ${({ theme }) => theme.space.xl} 0
+    calc(${({ theme }) => theme.space.xl} + env(safe-area-inset-bottom, 0px));
   border-top: 1px solid ${({ theme }) => theme.color.borderSubtle};
 `
 

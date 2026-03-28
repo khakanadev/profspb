@@ -71,6 +71,12 @@ const OptionLabel = styled.label<{ $checked: boolean }>`
     outline: 2px solid ${({ theme }) => theme.color.accent};
     outline-offset: 2px;
   }
+
+  @media (max-width: 22.5rem) {
+    gap: ${({ theme }) => theme.space.sm};
+    padding: ${({ theme }) => theme.space.sm} ${({ theme }) => theme.space.md};
+    border-left-width: 2px;
+  }
 `
 
 const Radio = styled.input`
@@ -98,6 +104,10 @@ const BarTrack = styled.div`
   overflow: hidden;
   border-radius: 1px;
   background: ${({ theme }) => theme.color.borderSubtle};
+
+  @media (max-width: 22.5rem) {
+    margin-bottom: ${({ theme }) => theme.space.lg};
+  }
 `
 
 const BarFill = styled.div<{ $ratio: number }>`
@@ -112,6 +122,11 @@ const Actions = styled.div`
   display: flex;
   flex-wrap: wrap;
   gap: ${({ theme }) => theme.space.sm};
+
+  @media (max-width: 22.5rem) {
+    flex-direction: column;
+    align-items: stretch;
+  }
 `
 
 const ResultActions = styled(Actions)`
@@ -131,6 +146,9 @@ const ResultEmphasis = styled(EmphasisBlock)`
 
 const Button = styled.button<{ $variant?: 'primary' | 'ghost' }>`
   cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   padding: ${({ theme }) => `${theme.space.sm} ${theme.space.lg}`};
   border-radius: 999px;
   font-family: inherit;
@@ -166,6 +184,11 @@ const Button = styled.button<{ $variant?: 'primary' | 'ghost' }>`
     cursor: not-allowed;
     opacity: 0.4;
   }
+
+  @media (max-width: 22.5rem) {
+    width: 100%;
+    min-height: 2.75rem;
+  }
 `
 
 const ResultCard = styled.div`
@@ -174,6 +197,10 @@ const ResultCard = styled.div`
   border-radius: ${({ theme }) => theme.radius.lg};
   background: ${({ theme }) => theme.color.surface};
   box-shadow: ${({ theme }) => theme.color.shadowSoft};
+
+  @media (max-width: 22.5rem) {
+    padding: ${({ theme }) => theme.space.md};
+  }
 `
 
 const ResultHeading = styled.h3`

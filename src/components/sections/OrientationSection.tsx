@@ -35,6 +35,10 @@ const OrientationIntro = styled(SectionIntro)`
     );
   border-radius: 0 ${({ theme }) => theme.radius.md}
     ${({ theme }) => theme.radius.md} 0;
+
+  @media (max-width: 22.5rem) {
+    padding-left: ${({ theme }) => theme.space.sm};
+  }
 `
 
 const ORIENTATION_POINTS = [

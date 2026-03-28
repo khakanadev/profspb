@@ -11,6 +11,11 @@ export const GlobalStyle = createGlobalStyle`
     -webkit-text-size-adjust: 100%;
     scroll-behavior: smooth;
     scroll-padding-top: ${({ theme }) => theme.layout.scrollPaddingTop};
+    overflow-x: clip;
+
+    @media (max-width: 719px) {
+      scroll-padding-top: ${({ theme }) => theme.layout.scrollPaddingTopNarrow};
+    }
 
     @media (prefers-reduced-motion: reduce) {
       scroll-behavior: auto;
@@ -19,7 +24,9 @@ export const GlobalStyle = createGlobalStyle`
 
   body {
     margin: 0;
+    min-width: 320px;
     min-height: 100vh;
+    overflow-wrap: break-word;
     font-family: ${({ theme }) => theme.font.sans};
     font-size: 1rem;
     line-height: 1.6;

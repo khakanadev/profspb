@@ -4,6 +4,8 @@ export type AppTheme = {
     pagePadding: string
     headerHeight: string
     scrollPaddingTop: string
+    /** Якоря: выше шапки в две строки (мобильные ≤719px). */
+    scrollPaddingTopNarrow: string
   }
   color: {
     bg: string
@@ -44,6 +46,7 @@ export const theme: AppTheme = {
     pagePadding: '1.25rem',
     headerHeight: '3.5rem',
     scrollPaddingTop: '4.25rem',
+    scrollPaddingTopNarrow: '5.85rem',
   },
   color: {
     bg: '#fafafa',
@@ -67,7 +70,7 @@ export const theme: AppTheme = {
     md: '1rem',
     lg: '1.5rem',
     xl: '2rem',
-    section: 'clamp(3rem, 8vw, 5rem)',
+    section: 'clamp(2.35rem, 7.5vw, 5rem)',
   },
   radius: {
     sm: '6px',
