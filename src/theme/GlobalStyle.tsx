@@ -11,6 +11,10 @@ export const GlobalStyle = createGlobalStyle`
     -webkit-text-size-adjust: 100%;
     scroll-behavior: smooth;
     scroll-padding-top: ${({ theme }) => theme.layout.scrollPaddingTop};
+
+    @media (prefers-reduced-motion: reduce) {
+      scroll-behavior: auto;
+    }
   }
 
   body {
@@ -18,9 +22,11 @@ export const GlobalStyle = createGlobalStyle`
     min-height: 100vh;
     font-family: ${({ theme }) => theme.font.sans};
     font-size: 1rem;
-    line-height: 1.5;
+    line-height: 1.6;
     color: ${({ theme }) => theme.color.text};
     background-color: ${({ theme }) => theme.color.bg};
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
   #root {

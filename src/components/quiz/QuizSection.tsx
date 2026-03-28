@@ -20,11 +20,12 @@ const Fieldset = styled.fieldset`
 `
 
 const Legend = styled.legend`
-  margin: 0 0 ${({ theme }) => theme.space.md};
+  margin: 0 0 ${({ theme }) => theme.space.lg};
   padding: 0;
-  font-size: 1.125rem;
-  font-weight: 700;
-  line-height: 1.35;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: -0.02em;
   color: ${({ theme }) => theme.color.text};
 `
 
@@ -38,16 +39,33 @@ const OptionLabel = styled.label<{ $checked: boolean }>`
   display: flex;
   cursor: pointer;
   align-items: flex-start;
-  gap: ${({ theme }) => theme.space.sm};
-  padding: ${({ theme }) => theme.space.md};
-  border: 1px solid
-    ${({ theme, $checked }) =>
-      $checked ? theme.color.accent : theme.color.border};
-  border-radius: ${({ theme }) => theme.radius.md};
-  background: ${({ theme, $checked }) =>
-    $checked ? theme.color.accentSurface : theme.color.surface};
+  gap: ${({ theme }) => theme.space.md};
+  padding: ${({ theme }) => theme.space.md} ${({ theme }) => theme.space.lg};
+  border: 1px solid ${({ theme }) => theme.color.border};
+  border-radius: ${({ theme }) => theme.radius.lg};
+  background: ${({ theme }) => theme.color.surface};
   box-shadow: ${({ theme, $checked }) =>
-    $checked ? `0 0 0 1px ${theme.color.accent}` : 'none'};
+    $checked ? theme.color.shadowSoft : 'none'};
+  border-left: 3px solid
+    ${({ theme, $checked }) =>
+      $checked ? theme.color.accent : 'transparent'};
+  transition:
+    border-color 0.15s ease,
+    background 0.15s ease,
+    box-shadow 0.15s ease;
+
+  ${({ theme, $checked }) =>
+    $checked
+      ? `
+    background: ${theme.color.accentSurface};
+    border-color: ${theme.color.border};
+  `
+      : `
+    &:hover {
+      border-color: ${theme.color.border};
+      background: ${theme.color.bg};
+    }
+  `}
 
   &:has(:focus-visible) {
     outline: 2px solid ${({ theme }) => theme.color.accent};
@@ -62,30 +80,30 @@ const Radio = styled.input`
 `
 
 const OptionText = styled.span`
-  font-size: 0.9375rem;
-  line-height: 1.45;
+  font-size: 0.875rem;
+  line-height: 1.55;
   color: ${({ theme }) => theme.color.text};
 `
 
 const Progress = styled.p`
-  margin: 0 0 ${({ theme }) => theme.space.md};
-  font-size: 0.875rem;
-  font-weight: 600;
+  margin: 0 0 ${({ theme }) => theme.space.sm};
+  font-size: 0.8125rem;
+  font-weight: 500;
   color: ${({ theme }) => theme.color.textMuted};
 `
 
 const BarTrack = styled.div`
-  height: 6px;
-  margin-bottom: ${({ theme }) => theme.space.lg};
+  height: 2px;
+  margin-bottom: ${({ theme }) => theme.space.xl};
   overflow: hidden;
-  border-radius: 4px;
-  background: ${({ theme }) => theme.color.border};
+  border-radius: 1px;
+  background: ${({ theme }) => theme.color.borderSubtle};
 `
 
 const BarFill = styled.div<{ $ratio: number }>`
   width: ${({ $ratio }) => `${Math.round($ratio * 100)}%`};
   height: 100%;
-  border-radius: 4px;
+  border-radius: 1px;
   background: ${({ theme }) => theme.color.accent};
   transition: width 0.2s ease;
 `
@@ -113,21 +131,26 @@ const ResultEmphasis = styled(EmphasisBlock)`
 
 const Button = styled.button<{ $variant?: 'primary' | 'ghost' }>`
   cursor: pointer;
-  padding: ${({ theme }) => `${theme.space.sm} ${theme.space.md}`};
-  border-radius: ${({ theme }) => theme.radius.sm};
+  padding: ${({ theme }) => `${theme.space.sm} ${theme.space.lg}`};
+  border-radius: 999px;
   font-family: inherit;
-  font-size: 0.9375rem;
+  font-size: 0.875rem;
   font-weight: 600;
+  letter-spacing: -0.01em;
+  transition:
+    background 0.15s ease,
+    color 0.15s ease,
+    border-color 0.15s ease;
 
   ${({ theme, $variant }) =>
     $variant === 'ghost'
       ? `
     border: 1px solid ${theme.color.border};
-    background: ${theme.color.surface};
+    background: transparent;
     color: ${theme.color.textMuted};
     &:hover:not(:disabled) {
-      border-color: ${theme.color.accent};
-      color: ${theme.color.accent};
+      border-color: ${theme.color.text};
+      color: ${theme.color.text};
     }
   `
       : `
@@ -141,22 +164,23 @@ const Button = styled.button<{ $variant?: 'primary' | 'ghost' }>`
 
   &:disabled {
     cursor: not-allowed;
-    opacity: 0.45;
+    opacity: 0.4;
   }
 `
 
 const ResultCard = styled.div`
-  padding: ${({ theme }) => theme.space.md};
+  padding: ${({ theme }) => theme.space.lg};
   border: 1px solid ${({ theme }) => theme.color.border};
-  border-radius: ${({ theme }) => theme.radius.md};
+  border-radius: ${({ theme }) => theme.radius.lg};
   background: ${({ theme }) => theme.color.surface};
-  box-shadow: 0 1px 3px ${({ theme }) => theme.color.accentShadow};
+  box-shadow: ${({ theme }) => theme.color.shadowSoft};
 `
 
 const ResultHeading = styled.h3`
   margin: 0 0 ${({ theme }) => theme.space.sm};
-  font-size: 1.25rem;
-  font-weight: 700;
+  font-size: 1.125rem;
+  font-weight: 600;
+  letter-spacing: -0.03em;
   color: ${({ theme }) => theme.color.text};
 `
 
@@ -169,8 +193,9 @@ const ResultBody = styled.p`
 
 const UniLine = styled.p`
   margin: 0 0 ${({ theme }) => theme.space.xs};
-  font-size: 0.95rem;
+  font-size: 0.9375rem;
   font-weight: 600;
+  letter-spacing: -0.02em;
   color: ${({ theme }) => theme.color.text};
 `
 
@@ -182,6 +207,7 @@ const ExternalLink = styled.a`
   &:hover {
     color: ${({ theme }) => theme.color.accentHover};
     text-decoration: underline;
+    text-underline-offset: 3px;
   }
 `
 

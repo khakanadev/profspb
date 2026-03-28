@@ -5,6 +5,7 @@ import { OrientationSection } from './components/sections/OrientationSection'
 import { RelevanceSection } from './components/sections/RelevanceSection'
 import { QuizSection } from './components/quiz/QuizSection'
 import { UniversitiesSection } from './components/universities/UniversitiesSection'
+import { FaqSection } from './components/faq/FaqSection'
 
 export default function App() {
   return (
@@ -16,6 +17,7 @@ export default function App() {
         <RelevanceSection />
         <QuizSection />
         <UniversitiesSection />
+        <FaqSection />
       </main>
       <SiteFooter />
     </>

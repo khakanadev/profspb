@@ -3,18 +3,9 @@ import { universities } from '../../data/universities'
 import {
   ContentSection,
   SectionIntro,
-  SectionLead,
   SectionTitle,
 } from '../sections/SectionPrimitives'
 import { SiteShell } from '../layout/SiteShell'
-
-const PhotoCredit = styled.p`
-  margin: ${({ theme }) => theme.space.md} 0
-    ${({ theme }) => theme.space.lg};
-  font-size: 0.78rem;
-  line-height: 1.45;
-  color: ${({ theme }) => theme.color.textMuted};
-`
 
 const CardGrid = styled.ul`
   display: grid;
@@ -30,21 +21,28 @@ const Card = styled.li`
   overflow: hidden;
   flex-direction: column;
   border: 1px solid ${({ theme }) => theme.color.border};
-  border-radius: ${({ theme }) => theme.radius.md};
+  border-radius: ${({ theme }) => theme.radius.lg};
   background: ${({ theme }) => theme.color.surface};
-  box-shadow: 0 1px 3px ${({ theme }) => theme.color.accentShadow};
+  box-shadow: ${({ theme }) => theme.color.shadowSoft};
+  transition: box-shadow 0.2s ease;
+
+  &:hover {
+    box-shadow: 0 4px 20px rgb(0 0 0 / 0.07);
+  }
 `
 
 const RankBadge = styled.span`
   position: absolute;
-  top: ${({ theme }) => theme.space.sm};
-  left: ${({ theme }) => theme.space.sm};
-  padding: ${({ theme }) => theme.space.xs} ${({ theme }) => theme.space.sm};
+  top: ${({ theme }) => theme.space.md};
+  left: ${({ theme }) => theme.space.md};
+  padding: 0.2rem 0.45rem;
   border-radius: ${({ theme }) => theme.radius.sm};
-  font-size: 0.75rem;
-  font-weight: 700;
-  color: #fff;
-  background: ${({ theme }) => theme.color.accent};
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: ${({ theme }) => theme.color.text};
+  background: rgb(255 255 255 / 0.92);
+  backdrop-filter: blur(6px);
 `
 
 const ImageWrap = styled.div`
@@ -64,40 +62,33 @@ const CardBody = styled.div`
   flex: 1;
   flex-direction: column;
   gap: ${({ theme }) => theme.space.sm};
-  padding: ${({ theme }) => theme.space.md};
+  padding: ${({ theme }) => theme.space.lg};
 `
 
 const CardTitle = styled.h3`
   margin: 0;
-  font-size: 1.05rem;
-  font-weight: 700;
-  line-height: 1.3;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.35;
+  letter-spacing: -0.02em;
   color: ${({ theme }) => theme.color.text};
 `
 
 const CardMeta = styled.p`
   margin: 0;
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   font-weight: 600;
-  color: ${({ theme }) => theme.color.accent};
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: ${({ theme }) => theme.color.textMuted};
 `
 
 const CardSummary = styled.p`
   flex: 1;
   margin: 0;
-  font-size: 0.9rem;
-  line-height: 1.5;
+  font-size: 0.875rem;
+  line-height: 1.6;
   color: ${({ theme }) => theme.color.textMuted};
-`
-
-const ScoreNote = styled.p`
-  margin: 0;
-  padding: ${({ theme }) => theme.space.sm};
-  border-radius: ${({ theme }) => theme.radius.sm};
-  font-size: 0.78rem;
-  line-height: 1.45;
-  color: ${({ theme }) => theme.color.text};
-  background: ${({ theme }) => theme.color.accentSurface};
 `
 
 const LinkRow = styled.div`
@@ -109,7 +100,7 @@ const LinkRow = styled.div`
 `
 
 const CardLink = styled.a`
-  font-size: 0.875rem;
+  font-size: 0.8125rem;
   font-weight: 600;
   color: ${({ theme }) => theme.color.accent};
   text-decoration: none;
@@ -117,6 +108,7 @@ const CardLink = styled.a`
   &:hover {
     color: ${({ theme }) => theme.color.accentHover};
     text-decoration: underline;
+    text-underline-offset: 3px;
   }
 `
 
@@ -126,20 +118,9 @@ export function UniversitiesSection() {
       <SiteShell>
         <SectionIntro>
           <SectionTitle id="universities-title">
-            Топ‑10 вузов Санкт‑Петербурга
+            Подборка из десяти сильных петербургских вузов
           </SectionTitle>
-          <SectionLead>
-            Подборка из десяти сильных петербургских вузов — как в нашем
-            справочнике проекта. У каждого: кратко о профиле, ориентир по
-            баллам (не догма) и ссылки на официальный сайт и справочник
-            Vuzopedia.
-          </SectionLead>
         </SectionIntro>
-
-        <PhotoCredit>
-          Фотографии зданий взяты с Wikimedia Commons (свободные лицензии);
-          условия указаны на страницах файлов.
-        </PhotoCredit>
 
         <CardGrid>
           {universities.map((u) => (
@@ -159,7 +140,6 @@ export function UniversitiesSection() {
                 <CardMeta>{u.shortName}</CardMeta>
                 <CardTitle>{u.fullName}</CardTitle>
                 <CardSummary>{u.summary}</CardSummary>
-                <ScoreNote>{u.scoreOrientir}</ScoreNote>
                 <LinkRow>
                   <CardLink
                     href={u.officialUrl}

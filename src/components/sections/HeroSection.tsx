@@ -2,61 +2,104 @@ import styled from 'styled-components'
 import { SiteShell } from '../layout/SiteShell'
 
 const Hero = styled.section`
-  padding: ${({ theme }) => theme.space.xl} 0;
+  position: relative;
+  padding: ${({ theme }) => theme.space.section} 0
+    ${({ theme }) => theme.space.xl};
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0 0 auto 0;
+    height: min(52%, 22rem);
+    pointer-events: none;
+    background: radial-gradient(
+      120% 100% at 0% 0%,
+      ${({ theme }) => theme.color.accentSurface} 0%,
+      ${({ theme }) => theme.color.accentSurfaceStrong} 42%,
+      transparent 72%
+    );
+  }
 `
 
-const Badge = styled.span`
-  display: inline-block;
-  margin-bottom: ${({ theme }) => theme.space.md};
-  padding: ${({ theme }) => theme.space.xs} ${({ theme }) => theme.space.sm};
-  border-radius: ${({ theme }) => theme.radius.sm};
-  font-size: 0.6875rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
+const HeroInner = styled.div`
+  position: relative;
+  max-width: 38rem;
+  padding-left: ${({ theme }) => theme.space.lg};
+  border-left: 3px solid ${({ theme }) => theme.color.accent};
+`
+
+const Kicker = styled.p`
+  display: inline-flex;
+  align-items: center;
+  gap: ${({ theme }) => theme.space.sm};
+  margin: 0 0 ${({ theme }) => theme.space.md};
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
   color: ${({ theme }) => theme.color.accent};
-  background: ${({ theme }) => theme.color.accentSurface};
+  background: ${({ theme }) => theme.color.surface};
+  border: 1px solid
+    color-mix(in srgb, ${({ theme }) => theme.color.accent} 28%, transparent);
+  box-shadow: ${({ theme }) => theme.color.shadowSoft};
+
+  &::before {
+    content: '';
+    flex-shrink: 0;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: ${({ theme }) => theme.color.accent};
+  }
 `
 
 const Title = styled.h1`
-  margin: 0;
-  font-size: clamp(1.75rem, 5vw, 2.25rem);
-  font-weight: 700;
-  line-height: 1.15;
-  letter-spacing: -0.03em;
+  margin: 0 0 ${({ theme }) => theme.space.lg};
+  max-width: 20ch;
+  font-size: clamp(2.125rem, 5.8vw, 3.5rem);
+  font-weight: 600;
+  line-height: 1.06;
+  letter-spacing: -0.045em;
   color: ${({ theme }) => theme.color.text};
+`
 
-  &::after {
-    display: block;
-    width: 3.25rem;
-    height: 4px;
-    margin-top: ${({ theme }) => theme.space.md};
-    margin-bottom: ${({ theme }) => theme.space.md};
-    border-radius: 2px;
-    background: ${({ theme }) => theme.color.accent};
-    content: '';
-  }
+const TitleAccent = styled.span`
+  color: ${({ theme }) => theme.color.accent};
 `
 
 const Lead = styled.p`
   margin: 0;
-  max-width: 36rem;
+  max-width: 34rem;
   font-size: 1.0625rem;
-  line-height: 1.6;
+  line-height: 1.68;
+  font-weight: 400;
   color: ${({ theme }) => theme.color.textMuted};
+`
+
+const LeadBrand = styled.span`
+  font-weight: 600;
+  color: ${({ theme }) => theme.color.accent};
 `
 
 export function HeroSection() {
   return (
     <Hero>
       <SiteShell>
-        <Badge>Санкт‑Петербург · выпускники 11 класса</Badge>
-        <Title>Разобраться в профессии до подачи документов</Title>
-        <Lead>
-          «ПрофСПб» собирает в одном месте понятное введение в профориентацию,
-          подборку вузов города и короткий опрос, чтобы от стресса ЕГЭ перейти
-          к осознанному выбору направления.
-        </Lead>
+        <HeroInner>
+          <Kicker>Санкт‑Петербург · 11 класс</Kicker>
+          <Title>
+            Разобраться в{' '}
+            <TitleAccent>профессии</TitleAccent> до подачи документов
+          </Title>
+          <Lead>
+            <LeadBrand>«ПрофСПб»</LeadBrand> — введение в профориентацию,
+            подборка вузов города и короткий опрос, чтобы спокойнее пройти путь
+            от ЕГЭ до выбора направления.
+          </Lead>
+        </HeroInner>
       </SiteShell>
     </Hero>
   )

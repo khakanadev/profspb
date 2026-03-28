@@ -1,7 +1,5 @@
 import type { University } from '../types/university'
 
-/** Фото: здания вузов, в основном с Wikimedia Commons (CC / свободные лицензии). */
-
 const IMG = {
   spbgu:
     'https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Spb_Vasilievsky_Island_Twelve_Collegiums_asv2019-09.jpg/960px-Spb_Vasilievsky_Island_Twelve_Collegiums_asv2019-09.jpg',
@@ -15,7 +13,6 @@ const IMG = {
     'https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Saint-Petersburg_Mining_University_08.jpg/960px-Saint-Petersburg_Mining_University_08.jpg',
   bonch:
     'https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/%D0%9A%D0%BE%D1%80%D0%BF%D1%83%D1%81_%D0%A1%D0%9F%D0%B1%D0%93%D0%A3%D0%A2.jpg/960px-%D0%9A%D0%BE%D1%80%D0%BF%D1%83%D1%81_%D0%A1%D0%9F%D0%B1%D0%93%D0%A3%D0%A2.jpg',
-  /** Иллюстрация: корпус на Марата (исторически — инженерно-экономический профиль в Петербурге); у СПбУТУиЭ нет отдельной статьи с фото в Википедии. */
   gutuMarata:
     'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/%D0%9C%D0%B0%D1%80%D0%B0%D1%82%D0%B0_27_02.jpg/960px-%D0%9C%D0%B0%D1%80%D0%B0%D1%82%D0%B0_27_02.jpg',
   gasu:
@@ -39,8 +36,6 @@ export const universities: readonly University[] = [
     imageUrl: IMG.spbgu,
     imageAlt:
       'Здание Двенадцати коллегий на Васильевском острове — главный комплекс СПбГУ',
-    scoreOrientir:
-      'Ориентир 2024–2026: на популярные программы часто от ~250 баллов и выше — смотрите приём СПбГУ.',
   },
   {
     rank: 2,
@@ -53,8 +48,6 @@ export const universities: readonly University[] = [
       'Крупнейший политех страны: инженерия, высокие технологии, предпринимательские траектории и тесные связи с промышленностью.',
     imageUrl: IMG.polytech,
     imageAlt: 'Главное здание Санкт-Петербургского политехнического университета',
-    scoreOrientir:
-      'Ориентир: по инженерным направлениям часто ~220–270+ в зависимости от программы.',
   },
   {
     rank: 3,
@@ -66,8 +59,6 @@ export const universities: readonly University[] = [
       'Национальный исследовательский университет с сильным ИТ, робототехникой, оптикой и продуктовым подходом к обучению.',
     imageUrl: IMG.itmo,
     imageAlt: 'Главное здание университета ИТМО в Санкт-Петербурге',
-    scoreOrientir:
-      'Ориентир: ИТ- и киберпрограммы традиционно конкурсные — проверяйте сайт ИТМО.',
   },
   {
     rank: 4,
@@ -80,8 +71,6 @@ export const universities: readonly University[] = [
       'Один из крупнейших экономических вузов: финансы, менеджмент, право, аналитика и сервис в единой экосистеме.',
     imageUrl: IMG.spbgeu,
     imageAlt: 'Фасад здания Санкт-Петербургского государственного экономического университета',
-    scoreOrientir:
-      'Ориентир: по экономике и финансам часто ~210–260+; точные пороги — на unecon.ru.',
   },
   {
     rank: 5,
@@ -93,8 +82,6 @@ export const universities: readonly University[] = [
       'Уникальный профиль: горное дело, геология, нефтегаз, промышленная безопасность и материалы.',
     imageUrl: IMG.mining,
     imageAlt: 'Здание Санкт-Петербургского горного университета',
-    scoreOrientir:
-      'Ориентир: проходные сильно зависят от профиля — смотрите приём на spmi.ru.',
   },
   {
     rank: 6,
@@ -107,8 +94,6 @@ export const universities: readonly University[] = [
       'Сильная школа связи, сетей, информационной безопасности и радиотехники для цифровой инфраструктуры.',
     imageUrl: IMG.bonch,
     imageAlt: 'Корпус СПбГУТ имени Бонч-Бруевича в Санкт-Петербурге',
-    scoreOrientir:
-      'Ориентир: по программам связи часто ~180–240+ — уточняйте на sut.ru.',
   },
   {
     rank: 7,
@@ -122,8 +107,6 @@ export const universities: readonly University[] = [
     imageUrl: IMG.gutuMarata,
     imageAlt:
       'Здание на улице Марата в Санкт-Петербурге — иллюстрация кампусов инженерно-экономического профиля (оформление карточки СПбУТУиЭ)',
-    scoreOrientir:
-      'Ориентир: широкий диапазон баллов по направлениям — только сайт gutu.ru.',
   },
   {
     rank: 8,
@@ -137,8 +120,6 @@ export const universities: readonly University[] = [
     imageUrl: IMG.gasu,
     imageAlt:
       'Учебный корпус СПбГАСУ на Московском проспекте в Санкт-Петербурге',
-    scoreOrientir:
-      'Ориентир: архитектура часто с творческими вступительными; баллы — на spbgasu.ru.',
   },
   {
     rank: 9,
@@ -151,8 +132,6 @@ export const universities: readonly University[] = [
       'Электроника, приборостроение, радиотехника и ИТ-инженерия с богатой лабораторной базой.',
     imageUrl: IMG.leti,
     imageAlt: 'Корпус электротехнического университета ЛЭТИ в Санкт-Петербурге',
-    scoreOrientir:
-      'Ориентир: на радио- и электротехнику традиционно высокий конкурс — etu.ru.',
   },
   {
     rank: 10,
@@ -165,8 +144,6 @@ export const universities: readonly University[] = [
       'Педагогика, психология, дефектология и гуманитарные программы в историческом кампусе на Мойке.',
     imageUrl: IMG.herzen,
     imageAlt: 'Главное здание РГПУ им. А. И. Герцена в Санкт-Петербурге',
-    scoreOrientir:
-      'Ориентир: много программ с разным проходом — смотрите herzen.spb.ru.',
   },
 ] as const
 

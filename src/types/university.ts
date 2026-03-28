@@ -11,6 +11,4 @@ export type University = {
   imageUrl: string
   /** Описание для screen readers и подписи. */
   imageAlt: string
-  /** Ориентир по проходным баллам; не заменяет приёмную кампанию. */
-  scoreOrientir: string
 }

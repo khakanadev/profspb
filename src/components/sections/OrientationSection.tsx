@@ -1,3 +1,4 @@
+import styled from 'styled-components'
 import { SiteShell } from '../layout/SiteShell'
 import {
   ContentSection,
@@ -9,6 +10,32 @@ import {
   SectionLead,
   SectionTitle,
 } from './SectionPrimitives'
+
+const OrientationRoot = styled(ContentSection)`
+  border-top: 1px solid
+    color-mix(
+      in srgb,
+      ${({ theme }) => theme.color.accent} 32%,
+      ${({ theme }) => theme.color.borderSubtle}
+    );
+  background: linear-gradient(
+    180deg,
+    ${({ theme }) => theme.color.accentSurfaceStrong} 0%,
+    transparent 36%
+  );
+`
+
+const OrientationIntro = styled(SectionIntro)`
+  padding-left: ${({ theme }) => theme.space.md};
+  border-left: 2px solid
+    color-mix(
+      in srgb,
+      ${({ theme }) => theme.color.accent} 38%,
+      ${({ theme }) => theme.color.border}
+    );
+  border-radius: 0 ${({ theme }) => theme.radius.md}
+    ${({ theme }) => theme.radius.md} 0;
+`
 
 const ORIENTATION_POINTS = [
   {
@@ -31,12 +58,12 @@ const ORIENTATION_POINTS = [
 
 export function OrientationSection() {
   return (
-    <ContentSection
+    <OrientationRoot
       id="about-orientation"
       aria-labelledby="about-orientation-title"
     >
       <SiteShell>
-        <SectionIntro>
+        <OrientationIntro>
           <SectionTitle id="about-orientation-title">
             Что такое профориентация и зачем она нужна
           </SectionTitle>
@@ -46,7 +73,7 @@ export function OrientationSection() {
             куда идёт рынок труда в Петербурге и России и какие шаги нужны,
             чтобы попасть на интересную программу.
           </SectionLead>
-        </SectionIntro>
+        </OrientationIntro>
         <PointList>
           {ORIENTATION_POINTS.map((point) => (
             <PointCard key={point.title}>
@@ -56,6 +83,6 @@ export function OrientationSection() {
           ))}
         </PointList>
       </SiteShell>
-    </ContentSection>
+    </OrientationRoot>
   )
 }
