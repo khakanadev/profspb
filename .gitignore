@@ -22,3 +22,8 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Локальные заметки и правила (не в репозиторий)
+rules.md
+stacks.md
+tasks.md
