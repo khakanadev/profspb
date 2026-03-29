@@ -4,7 +4,7 @@ const IMG = {
   spbgu:
     'https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Spb_Vasilievsky_Island_Twelve_Collegiums_asv2019-09.jpg/960px-Spb_Vasilievsky_Island_Twelve_Collegiums_asv2019-09.jpg',
   polytech:
-    'https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Polytechnical_Institute.jpg/960px-Polytechnical_Institute.jpg',
+    'https://innovations.misis.ru/wp-content/uploads/2023/11/106-1.jpg',
   itmo:
     "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/ITMO_University%27s_main_building%2C_August_2016.jpg/960px-ITMO_University%27s_main_building%2C_August_2016.jpg",
   spbgeu:
