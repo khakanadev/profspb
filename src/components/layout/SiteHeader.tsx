@@ -5,7 +5,7 @@ import { SiteShell } from './SiteShell'
 
 const NAV_ITEMS = [
   { href: '#about-orientation', label: 'О профориентации' },
-  { href: '#why-site', label: 'Зачем сайт' },
+  { href: '#why-site', label: 'Зачем нужен сайт' },
   { href: '#quiz', label: 'Опрос' },
   { href: '#universities', label: 'Вузы' },
   { href: '#faq', label: 'FAQ' },
